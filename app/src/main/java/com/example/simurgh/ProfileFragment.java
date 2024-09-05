@@ -61,7 +61,7 @@ public class ProfileFragment extends Fragment {
  });
 
  btnForgotPassword.setOnClickListener(v -> {
-
+     showRecoverPasswordDialog();
  });
  databaseReference.addValueEventListener(new ValueEventListener() {
      @Override
@@ -100,20 +100,12 @@ public class ProfileFragment extends Fragment {
         builder.setView(linearLayout);
 
         // Click on Recover and a email will be sent to your registered email id
-        builder.setPositiveButton("Recover", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                String email=emailet.getText().toString().trim();
-                beginRecovery(email);
-            }
+        builder.setPositiveButton("Recover", (dialog, which) -> {
+            String email=emailet.getText().toString().trim();
+            beginRecovery(email);
         });
 
-        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.dismiss();
-            }
-        });
+        builder.setNegativeButton("Cancel", (dialog, which) -> dialog.dismiss());
         builder.create().show();
     }
 
@@ -126,26 +118,20 @@ public class ProfileFragment extends Fragment {
         // calling sendPasswordResetEmail
         // open your email and write the new
         // password and then you can login
-        mAuth.sendPasswordResetEmail(email).addOnCompleteListener(new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task) {
-                loadingBar.dismiss();
-                if(task.isSuccessful())
-                {
-                    // if isSuccessful then done message will be shown
-                    // and you can change the password
-                    Toast.makeText(getContext(),"Done sent",Toast.LENGTH_LONG).show();
-                }
-                else {
-                    Toast.makeText(getContext(),"Error Occurred",Toast.LENGTH_LONG).show();
-                }
+        mAuth.sendPasswordResetEmail(email).addOnCompleteListener(task -> {
+            loadingBar.dismiss();
+            if(task.isSuccessful())
+            {
+                // if isSuccessful then done message will be shown
+                // and you can change the password
+                Toast.makeText(getContext(),"Done sent",Toast.LENGTH_LONG).show();
             }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                loadingBar.dismiss();
-                Toast.makeText(getContext(),"Error Failed",Toast.LENGTH_LONG).show();
+            else {
+                Toast.makeText(getContext(),"Error Occurred",Toast.LENGTH_LONG).show();
             }
+        }).addOnFailureListener(e -> {
+            loadingBar.dismiss();
+            Toast.makeText(getContext(),"Error Failed",Toast.LENGTH_LONG).show();
         });
     }
 }
