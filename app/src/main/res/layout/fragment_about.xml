@@ -40,7 +40,7 @@
             android:id="@+id/txtContent"
             android:fontFamily="@font/poppins"
             android:textSize="15sp"
-            android:text="Vision, Mission, and Values: SIMURGH is founded on the principle of progressive innovation – a vision to elevate human potential with AI, a mission to secure the digital ecosystem, and a set of values committed to ethical practice, community enhancement, and pioneering leadership. Our philosophy is grounded in creating a future where technology serves the greater good, enriches lives, and safeguards assets.
+            android:text="Vision, Mission, and Values: EVERZ is founded on the principle of progressive innovation – a vision to elevate human potential with AI, a mission to secure the digital ecosystem, and a set of values committed to ethical practice, community enhancement, and pioneering leadership. Our philosophy is grounded in creating a future where technology serves the greater good, enriches lives, and safeguards assets.
 
 Blockchain and Web3: Ensuring trust in digital transactions with immutable AI-powered security.
 

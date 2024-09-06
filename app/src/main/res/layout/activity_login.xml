@@ -35,7 +35,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_bold"
-            android:text="Welcome to Simurgh,"
+            android:text="Welcome to Everz,"
             android:textSize="24sp"
 
             />
@@ -45,7 +45,7 @@
             android:layout_height="wrap_content"
             android:ellipsize="start"
             android:fontFamily="@font/poppins"
-            android:text="Simurgh Your Trusted Technology Partner for\nDigital Transformation"
+            android:text="Everz Your Trusted Technology Partner for\nDigital Transformation"
             android:textColor="@color/black" />
     </LinearLayout>
 

@@ -32,7 +32,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/poppins_bold"
-            android:text="Welcome to Simurgh"
+            android:text="Welcome to Everz"
             android:textColor="#8066AE"
             android:textSize="16sp" />
 

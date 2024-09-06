@@ -142,7 +142,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_bold"
-            android:text="Simurgh Always Ready\nto Solve Your Problem"
+            android:text="Everz Always Ready\nto Solve Your Problem"
             android:textColor="@color/white"
             android:textSize="18sp" />
 
